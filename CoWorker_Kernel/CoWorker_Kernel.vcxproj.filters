@@ -19,12 +19,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Inf Include="First.inf">
+    <Inf Include="CoWorker_Kernel.inf">
       <Filter>Driver Files</Filter>
     </Inf>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="First.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
