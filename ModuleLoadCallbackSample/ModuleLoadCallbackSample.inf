@@ -1,0 +1,77 @@
+;
+; ModuleLoadCallbackSample.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System ; TODO: specify appropriate Class
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318} ; TODO: specify appropriate ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=ModuleLoadCallbackSample.cat
+DriverVer= ; TODO: set DriverVer in stampinf property pages
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+ModuleLoadCallbackSample_Device_CoInstaller_CopyFiles = 11
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+ModuleLoadCallbackSample.sys  = 1,,
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll=1 ; make sure the number matches with SourceDisksNames
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NT$ARCH$
+
+[Standard.NT$ARCH$]
+%ModuleLoadCallbackSample.DeviceDesc%=ModuleLoadCallbackSample_Device, Root\ModuleLoadCallbackSample ; TODO: edit hw-id
+
+[ModuleLoadCallbackSample_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+ModuleLoadCallbackSample.sys
+
+;-------------- Service installation
+[ModuleLoadCallbackSample_Device.NT.Services]
+AddService = ModuleLoadCallbackSample,%SPSVCINST_ASSOCSERVICE%, ModuleLoadCallbackSample_Service_Inst
+
+; -------------- ModuleLoadCallbackSample driver install sections
+[ModuleLoadCallbackSample_Service_Inst]
+DisplayName    = %ModuleLoadCallbackSample.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\ModuleLoadCallbackSample.sys
+
+;
+;--- ModuleLoadCallbackSample_Device Coinstaller installation ------
+;
+
+[ModuleLoadCallbackSample_Device.NT.CoInstallers]
+AddReg=ModuleLoadCallbackSample_Device_CoInstaller_AddReg
+CopyFiles=ModuleLoadCallbackSample_Device_CoInstaller_CopyFiles
+
+[ModuleLoadCallbackSample_Device_CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll,WdfCoInstaller"
+
+[ModuleLoadCallbackSample_Device_CoInstaller_CopyFiles]
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll
+
+[ModuleLoadCallbackSample_Device.NT.Wdf]
+KmdfService =  ModuleLoadCallbackSample, ModuleLoadCallbackSample_wdfsect
+[ModuleLoadCallbackSample_wdfsect]
+KmdfLibraryVersion = $KMDFVERSION$
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+DiskName = "ModuleLoadCallbackSample Installation Disk"
+ModuleLoadCallbackSample.DeviceDesc = "ModuleLoadCallbackSample Device"
+ModuleLoadCallbackSample.SVCDESC = "ModuleLoadCallbackSample Service"

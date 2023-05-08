@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CallBacks", "CallBacks", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ProcessCallbackSample", "ProcessCallbackSample\ProcessCallbackSample.vcxproj", "{893B5EE2-F03D-4E5C-8DB6-4199F35FF5F7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ModuleLoadCallbackSample", "ModuleLoadCallbackSample\ModuleLoadCallbackSample.vcxproj", "{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -89,12 +91,31 @@ Global
 		{893B5EE2-F03D-4E5C-8DB6-4199F35FF5F7}.Release|x86.ActiveCfg = Release|x64
 		{893B5EE2-F03D-4E5C-8DB6-4199F35FF5F7}.Release|x86.Build.0 = Release|x64
 		{893B5EE2-F03D-4E5C-8DB6-4199F35FF5F7}.Release|x86.Deploy.0 = Release|x64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Debug|ARM64.Build.0 = Debug|ARM64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Debug|x64.ActiveCfg = Debug|x64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Debug|x64.Build.0 = Debug|x64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Debug|x64.Deploy.0 = Debug|x64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Debug|x86.ActiveCfg = Debug|x64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Debug|x86.Build.0 = Debug|x64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Debug|x86.Deploy.0 = Debug|x64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Release|ARM64.ActiveCfg = Release|ARM64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Release|ARM64.Build.0 = Release|ARM64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Release|ARM64.Deploy.0 = Release|ARM64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Release|x64.ActiveCfg = Release|x64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Release|x64.Build.0 = Release|x64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Release|x64.Deploy.0 = Release|x64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Release|x86.ActiveCfg = Release|x64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Release|x86.Build.0 = Release|x64
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC}.Release|x86.Deploy.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{893B5EE2-F03D-4E5C-8DB6-4199F35FF5F7} = {78DE52B9-B654-489B-BFC3-B38416E2BA43}
+		{1A1DA2A9-6DE1-4465-B90A-9716754A5CFC} = {78DE52B9-B654-489B-BFC3-B38416E2BA43}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B69855BE-6245-4015-92BE-19A9AB410769}
